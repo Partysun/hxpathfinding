@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<project>
+  <meta title="PathfindingUnitTests" version="0.1.0" />
+  <app file="TestMain" main="TestMain" />
+
+  <source path="source" />
+
+  <assets path="assets" />
+
+  <set name="no-custom-backend" />
+  <set name="unit-test" />
+
+  <haxelib name="munit" />
+  <haxelib name="openfl" />
+  <haxelib name="pathfinding" />
+
+</project>

@@ -1,0 +1,15 @@
+-main TestMain
+-cp source
+-cp ..
+-lib munit
+-lib lime
+-lib openfl
+-lib pathfinding
+
+--macro flixel.system.macros.FlxConditionals.run()
+
+-D FLX_HAXE_BUILD
+-D openfl-flash
+
+-swf-version 11.8
+-swf bin/as3_test.swf

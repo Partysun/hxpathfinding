@@ -1,0 +1,24 @@
+# Logs and databases #
+*.log
+tests/report/
+teamcity-info.xml
+
+# OS generated files #
+.DS_Store
+ehthumbs.db
+Icon?
+Thumbs.db
+
+#editors
+.ctags
+*.iml
+.idea/
+
+# Folder #
+tags
+.hxml
+export/
+.sync/
+out
+build
+bin

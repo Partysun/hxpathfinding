@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<project>
+    <!--authtor: Yura Zatsepin 2015-->
+	
+	<meta title="Pathfinding sample" package="pathfinding.samples" version="0.1.0" company="Partysun" />
+	<app main="Main" path="export" file="PathfindingSample" />
+	
+	<source path="source" />
+	
+	<haxelib name="openfl" />
+	<haxelib name="pathfinding" />
+	
+	<assets path="assets" rename="assets" exclude="*.svg" />
+	
+</project>

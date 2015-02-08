@@ -1,0 +1,14 @@
+{
+  "name": "pathfinding",
+  "license": "MIT",
+  "classPath": "source/",
+  "tags": ["pathfinder", "AStar", "AI"],
+  "description": "",
+  "contributors": ["Partysun"],
+  "releasenote": "Initial",
+  "version": "0.1.0",
+  "url": "https://github.com/Partysun/hxpathfinding",
+  "dependencies": {
+
+  }
+}
