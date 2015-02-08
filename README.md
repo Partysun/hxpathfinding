@@ -4,7 +4,7 @@ PathFinding (Haxe Library)
 
 *Haxe* is awesome language for game development. And Haxe should has the cool *easy to use* pathfinding lib.
 
-Server
+Install
 ------
 
 `haxelib git log git@github.com:Partysun/hxpathfinding.git`
