@@ -1,0 +1,27 @@
+language: java
+
+env: 
+  - TARGET=flash
+  - TARGET=neko
+  - TARGET=html5
+  - TARGET=munit
+  
+matrix:
+  allow_failures:
+    - env: "TARGET=html5"
+
+before_install:
+  - sudo add-apt-repository ppa:eyecreate/haxe -y
+  - sudo apt-get update
+  - sudo apt-get install haxe -y
+  - sudo apt-get install -qq --force-yes libgd2-xpm ia32-libs ia32-libs-multiarch
+  - mkdir ~/haxelib
+  - haxelib -notimeout setup ~/haxelib 
+  - haxelib -notimeout install munit
+  - haxelib -notimeout install lime > /dev/null
+  - haxelib -notimeout run lime install openfl > /dev/null
+  - haxelib -notimeout install systools
+
+script:
+  - cd ./tests
+  - /bin/sh -c '[ $TARGET = "munit" ] && haxe test.hxml'
