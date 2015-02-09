@@ -14,15 +14,15 @@ package pathfinding.core;
  */
 class Node 
 {
-	public var x:Float;
-	public var y:Float;
+	public var x:Int;
+	public var y:Int;
 	public var walkable:Bool;
 	public var neighbors:Array<Node>;
 	public var parent:Node = null;
 	public var g:Int = 0;
 	public var f:Int = 0;
 
-	public function new(x:Float, y:Float, walkable:Bool = true) 
+	public function new(x:Int, y:Int, walkable:Bool = true) 
 	{
 		this.x = x;
 		this.y = y;

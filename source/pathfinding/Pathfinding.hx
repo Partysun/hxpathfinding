@@ -1,21 +1,21 @@
 package pathfinding;
 
-import pathfinding.core.WaypointsMap;
+import pathfinding.core.IMap;
+import pathfinding.core.Heuristic;
 import pathfinding.core.Node;
 import pathfinding.core.Path;
 
 /**
- * Find the shortest path between two waipoints on the map
- *
+ * We need to find the path... follow the white rabbit.
  *
  * @author Yura Zatsepin
  */
 class Pathfinding
 {
-	public var map:WaypointsMap;
+	public var map:IMap;
 	private var aStar:AStar;
 
-	public function new(map:WaypointsMap)
+	public function new(map:IMap)
 	{
 		this.map = map;
 		aStar = new AStar();
@@ -56,14 +56,12 @@ class AStar
 	var openList = new Array<Node>();
 	var closedList = new Array<Node>();
 
-
-
 	private function sortFunc(node1:Node, node2:Node):Int
 	{
 		return node1.f - node2.f;
 	}
 
-	public function search(start:Node, goal:Node, map:WaypointsMap):Path
+	public function search(start:Node, goal:Node, map:IMap):Path
 	{
 		var current:Node = null;
 		var neighbors:Array<Node> = null;

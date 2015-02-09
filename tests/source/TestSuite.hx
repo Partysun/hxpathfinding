@@ -15,5 +15,6 @@ class TestSuite extends massive.munit.TestSuite
 		super();
 
 		add(PathfindingTest);
+		add(GridMapTest);
 	}
 }
