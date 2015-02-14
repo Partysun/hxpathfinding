@@ -34,14 +34,9 @@ class AStar
 		start.f = Std.int(map.heuristic(start, goal));
 
 		while (openList.length != 0) {
-			// pop the position of node which has the minimum `f` value.
             openList.sort(sortFunc);
-            //current = min(openset, key=lambda o:o.g + o.h)
-			//current = openList.remove(current);
+			// pop the position of node which has the minimum `f` value.
             current = openList.pop();
-            for (node in openList){
-                trace(node.f);
-            }
 			closedList.push(current);
 
 			// if reached the end position, construct the path and return it
