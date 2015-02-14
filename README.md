@@ -1,6 +1,6 @@
 PathFinding (Haxe Library)
 ==============
-## The ligthweight and 'KISS' path-finding library in haxe. ##
+## The 'KISS' path-finding library in haxe. ##
 
 *Haxe* is awesome language for game development. And Haxe should has the cool *easy to use* pathfinding lib.
 
@@ -19,6 +19,23 @@ Usage
 
 `AStarFinder` is the first algorythm in the library.
 
+GridMap example:
+```haxe
+var map:GridMap;
+start_node = map.getNode(2, 1);
+goal_node = map.getNode(5, 4);
+map.getNode(5, 1).walkable = false;
+map.getNode(2, 2).walkable = false;
+map.getNode(3, 2).walkable = false;
+map.getNode(4, 2).walkable = false;
+
+var pathfinder = new Pathfinding(map);
+var path = pathfinder.findPath(start_node, goal_node);
+
+trace("Path:" + path);
+```
+
+WaypointsMap example:
 ```haxe
 import pathfinding.Pathfinding;
 import pathfinding.core.WaypointsMap;
