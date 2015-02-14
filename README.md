@@ -21,7 +21,7 @@ Usage
 
 GridMap example:
 ```haxe
-var map:GridMap;
+var map:GridMap = new GridMap(9, 9);
 start_node = map.getNode(2, 1);
 goal_node = map.getNode(5, 4);
 map.getNode(5, 1).walkable = false;
