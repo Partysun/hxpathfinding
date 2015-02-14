@@ -21,6 +21,7 @@ class Node
 	public var parent:Node = null;
 	public var g:Int = 0;
 	public var f:Int = 0;
+	public var h:Int = 0;
 
 	public function new(x:Int, y:Int, walkable:Bool = true) 
 	{

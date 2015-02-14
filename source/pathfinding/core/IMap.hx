@@ -10,6 +10,7 @@ import pathfinding.core.Node;
  */
 interface IMap
 {
+	public var COST:Int = 1;
 	public var nodes:Array<Node>;
 
 	public function addNode(node:Node):Node;

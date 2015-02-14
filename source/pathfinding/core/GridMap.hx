@@ -5,13 +5,14 @@ import pathfinding.core.Heuristic;
 
 class GridMap implements IMap
 {
+	public var COST:Int = 1;
     /**
      * A 2D array of nodes.
      */
 	public var nodes:Array<Node> = new Array<Node>();
 
-    private var width:Int;
-    private var height:Int;
+    public var width(default, null):Int;
+    public var height(default, null):Int;
 
     /**
      * The Grid class, which serves as the encapsulation of the layout of the nodes.
@@ -50,9 +51,9 @@ class GridMap implements IMap
 
 	public function heuristic(node1:Node, node2:Node):Float
 	{
-		var dx:Float = node1.x - node2.x;
-		var dy:Float = node1.y - node2.y;
-		return Heuristic.manhattan((dx > 0 ? dx : -dx), (dy > 0 ? dy : -dy));
+		var dx:Float = node2.x - node1.x;
+		var dy:Float = node2.y - node1.y;
+		return Heuristic.manhattan(Math.abs(dx), Math.abs(dy));
 	}
 
     /**
@@ -92,7 +93,7 @@ class GridMap implements IMap
 		return neighbors;
 	}
 
-    public inline function getNode(x:Int, y:Int):Node
+    public function getNode(x:Int, y:Int):Node
     {
         return nodes[width * x + y];
     }
@@ -104,7 +105,7 @@ class GridMap implements IMap
      * @param {Int} y - The y coordinate of the node.
      * @return {Bool} - The walkability of the node.
      */
-    public inline function isWalkable(x:Int, y:Int):Bool
+    public function isWalkable(x:Int, y:Int):Bool
     {
         return this.inBounds(x, y) && this.getNode(x, y).walkable;
     };

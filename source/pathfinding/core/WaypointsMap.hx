@@ -5,6 +5,8 @@ import pathfinding.core.Heuristic;
 
 class WaypointsMap implements IMap
 {
+	public var COST:Int = 10;
+
 	public var nodes:Array<Node>;
 
 	public function new()

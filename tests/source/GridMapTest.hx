@@ -5,6 +5,9 @@ import massive.munit.Assert;
 import pathfinding.core.GridMap;
 import pathfinding.core.Node;
 import pathfinding.core.Path;
+
+import pathfinding.algorithms.AStar;
+
 import pathfinding.Pathfinding;
 
 /**
@@ -18,6 +21,7 @@ class GridMapTest
 	private var start:Node;
 	private var goal:Node;
 	private var map:GridMap;
+    private var aStar:AStar;
 
 	public function new() {}
 
@@ -26,6 +30,7 @@ class GridMapTest
 	{
         map = new GridMap(9, 9);
         pathfinder = new Pathfinding(map);
+		aStar = new AStar();
 	}
 
     @Test 
@@ -34,31 +39,17 @@ class GridMapTest
         var start = map.getNode(1, 1);
         var goal = map.getNode(2, 1);
         var path = pathfinder.findPath(start, goal);
-        trace(path);
         Assert.isTrue(path != null && path != Path.INVALID);
-
-        var start = map.getNode(1, 1);
-        var goal = map.getNode(4, 4);
-        var path = pathfinder.findPath(start, goal);
-        trace(path);
-        //Assert.isTrue(path != null && path != Path.INVALID);
     }
 
     @Test
     function testAStarSearch():Void 
     {
-		aStar = new AStar();
+        var aStar = new AStar();
         var start = map.getNode(1, 1);
         var goal = map.getNode(2, 1);
-		path = aStar.search(start, goal, map);
-        trace(path);
+        var path = aStar.search(start, goal, map);
         Assert.isTrue(path != null && path != Path.INVALID);
-
-        //var start = map.getNode(1, 1);
-        //var goal = map.getNode(4, 4);
-        //var path = pathfinder.findPath(start, goal);
-        //trace(path);
-        //Assert.isTrue(path != null && path != Path.INVALID);
     }
 
     @Test 
