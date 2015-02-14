@@ -66,3 +66,22 @@ for (node in path.nodes)
     trace(node + "");
 }
 ```
+
+TODO
+-----------
+
+* Add one more algorythm
+* Add flexeble interface for change a heuristic  
+* Add benchmark (http://www.movingai.com/benchmarks/)
+* Add Heap or PriorityQueue for the openlist. It's the critical place of lib speed
+
+CHANGELOG
+-----------
+
+v 0.1.0 - 15.02.2015
+
+- Two basic sceanrio: GridMap and WaypointsMap
+- AStar algorythm
+- Manhattan heuristic
+- Openfl sample
+- Tests
