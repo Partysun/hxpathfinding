@@ -7,7 +7,7 @@ PathFinding (Haxe Library)
 Install
 ------
 
-`haxelib git log git@github.com:Partysun/hxpathfinding.git`
+`haxelib git pathfinding git@github.com:Partysun/hxpathfinding.git`
 
 And then in your project's hxml build file, add
 
