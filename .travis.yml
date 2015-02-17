@@ -14,7 +14,7 @@ before_install:
   - haxelib -notimeout install lime > /dev/null
   - haxelib -notimeout run lime install openfl > /dev/null
   - haxelib -notimeout install systools
-  - haxelib git pathfinding https://github.com:Partysun/hxpathfinding.git
+  - haxelib git pathfinding https://github.com/Partysun/hxpathfinding.git
 
 script:
   - cd ./tests

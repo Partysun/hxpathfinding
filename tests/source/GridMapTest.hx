@@ -158,5 +158,9 @@ class GridMapTest
 
         var node = map.getNodeByXY(0, 0);
         Assert.isTrue(node == null);
+
+        var position = map.getMidpointXYByNode(map.getNode(2, 2));
+        Assert.isTrue(position[0] == 35);
+        Assert.isTrue(position[1] == 35);
     }
 }

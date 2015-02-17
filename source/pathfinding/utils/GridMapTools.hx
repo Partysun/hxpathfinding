@@ -30,6 +30,19 @@ class GridMapTools
         return map.getNode(xInGrid, yInGrid);
     }
 
+    // return the midpoint of the node in real world coordinates (px)
+    public static function getMidpointXYByNode(map:GridMap, node:Node):Array<Float> 
+    {
+        if (pxWidthNode == -1 || pxHeightNode == -1)
+        {
+            throw "Real world map data does not set up! Please provide world width/height of the node."; 
+        }
+        var midX = (pxWidthNode * node.x + pxWidthNode * .5) + (pxXOffset == -1 ? 0 : pxXOffset);
+        var midY = (pxHeightNode * node.y + pxHeightNode * .5) + (pxYOffset == -1 ? 0 : pxYOffset);
+
+        return [midX, midY];
+    }
+
     public static function setWorldData(map:GridMap, pxWidthNode:Int, pxHeightNode:Int, pxXOffset:Int=0, pxYOffset:Int=0):Void
     {
         GridMapTools.pxWidthNode = pxWidthNode;
