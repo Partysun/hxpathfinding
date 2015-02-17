@@ -3,6 +3,11 @@ package pathfinding.core;
 import pathfinding.core.Node;
 import pathfinding.core.Heuristic;
 
+/**
+ * GridMap describes a simple rectangle map.
+ *
+ * @author: Yura Zatsepin
+ */
 class GridMap implements IMap
 {
 	public var COST:Int = 1;

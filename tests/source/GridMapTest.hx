@@ -10,6 +10,8 @@ import pathfinding.algorithms.AStar;
 
 import pathfinding.Pathfinding;
 
+using pathfinding.utils.GridMapTools;
+
 /**
  * Test grid map
  *
@@ -130,5 +132,31 @@ class GridMapTest
         Assert.isTrue(map.nodes.length == 9);
         Assert.isTrue(map.nodes[8].x == 2);
         Assert.isTrue(map.nodes[8].y == 2);
+    }
+
+    @Test
+    function testGridMapTools() {
+        var map = new GridMap(3, 3);
+        Assert.isTrue(map.nodes != null);
+        map.setWorldData(10, 10);
+        var node = map.getNodeByXY(11, 11);
+        Assert.isTrue(node != null);
+        Assert.isTrue(node.equals(map.getNode(1, 1)));
+        map.setWorldData(10, 10, 10, 10);
+        var node = map.getNodeByXY(20, 20);
+        Assert.isTrue(node != null);
+        Assert.isTrue(node.equals(map.getNode(1, 1)));
+        var node = map.getNodeByXY(25, 25);
+        Assert.isTrue(node != null);
+        Assert.isTrue(node.equals(map.getNode(1, 1)));
+        var node = map.getNodeByXY(29, 29);
+        Assert.isTrue(node != null);
+        Assert.isTrue(node.equals(map.getNode(1, 1)));
+        var node = map.getNodeByXY(30, 30);
+        Assert.isTrue(node != null);
+        Assert.isTrue(node.equals(map.getNode(2, 2)));
+
+        var node = map.getNodeByXY(0, 0);
+        Assert.isTrue(node == null);
     }
 }
