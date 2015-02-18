@@ -33,6 +33,14 @@ var pathfinder = new Pathfinding(map);
 var path = pathfinder.findPath(start_node, goal_node);
 
 trace("Path:" + path);
+ 
+```
+
+You can render debug sprite, if you work with Openfl:
+```haxe
+debug.clear();
+debug.draw(map, path);
+addChild(debug.display);
 ```
 
 WaypointsMap example:
@@ -67,16 +75,25 @@ for (node in path.nodes)
 }
 ```
 
+For more samples, look at sample directory.
+
 TODO
 -----------
 
-* Add one more algorythm
-* Add flexeble interface for change a heuristic  
-* Add benchmark (http://www.movingai.com/benchmarks/)
-* Add Heap or PriorityQueue for the openlist. It's the critical place of lib speed
+- [ ] More useful tools 
+- [x] Debug graphic mode
+- [ ] Add one more algorythm
+- [ ] Add flexeble interface for change a heuristic
+- [ ] Add benchmark (http://www.movingai.com/benchmarks/)
+- [ ] Add Heap or PriorityQueue for the openlist. It's the critical place of lib speed
 
 CHANGELOG
 -----------
+
+v 0.2.0 - 18.02.2015
+
+- Tools for GridMap. Tools help work with real game world and model of map.
+- Debug mode
 
 v 0.1.0 - 15.02.2015
 

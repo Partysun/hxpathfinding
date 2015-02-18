@@ -10,11 +10,11 @@ import pathfinding.core.GridMap;
  */
 class GridMapTools
 {
-    public static var pxWidthNode:Int = -1;
-    public static var pxHeightNode:Int = -1;
+    public static var pxWidthNode:Float = -1;
+    public static var pxHeightNode:Float = -1;
 
-    public static var pxXOffset:Int = -1;
-    public static var pxYOffset:Int = -1;
+    public static var pxXOffset:Float = -1;
+    public static var pxYOffset:Float = -1;
 
     public function new() {}
 
@@ -49,5 +49,32 @@ class GridMapTools
         GridMapTools.pxHeightNode = pxHeightNode;
         GridMapTools.pxXOffset = pxXOffset;
         GridMapTools.pxYOffset = pxYOffset;
+    }
+
+    private static inline function checkSetUp():Bool
+    {
+        if (pxWidthNode == -1 || pxHeightNode == -1)
+        {
+            throw "Real world map data does not set up! Please provide world width/height of the node."; 
+        }
+        return true;
+    }
+
+    public static function getWorldWidth(map:GridMap):Float
+    {
+        checkSetUp();
+        return pxWidthNode * map.width;
+    }
+
+    public static function getWorldHeight(map:GridMap):Float
+    {
+        checkSetUp();
+        return pxHeightNode * map.height;
+    }
+
+    public static function getWorldPosition(map:GridMap):Array<Float>
+    {
+        checkSetUp();
+        return [pxXOffset, pxYOffset];
     }
 }
