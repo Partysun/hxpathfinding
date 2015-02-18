@@ -43,6 +43,15 @@ class GridMapTools
         return [midX, midY];
     }
 
+    public static function getMidpointXYByNodeXY(map:GridMap, x:Float, y:Float):Array<Float> 
+    {
+        checkSetUp();
+        var midX = (pxWidthNode * x + pxWidthNode * .5) + (pxXOffset == -1 ? 0 : pxXOffset);
+        var midY = (pxHeightNode * y + pxHeightNode * .5) + (pxYOffset == -1 ? 0 : pxYOffset);
+
+        return [midX, midY];
+    }
+
     public static function setWorldData(map:GridMap, pxWidthNode:Int, pxHeightNode:Int, pxXOffset:Int=0, pxYOffset:Int=0):Void
     {
         GridMapTools.pxWidthNode = pxWidthNode;

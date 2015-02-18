@@ -83,11 +83,11 @@ class Debug
                   break;
               drawLineBetweenNode(path.nodes[i], path.nodes[i+1]);
           }      
-      }
 
       // draw start and goal node
       drawCircleFromNode(path.nodes[0], BLUE);
       drawCircleFromNode(path.nodes[path.nodes.length - 1], RED);
+      }
 
       // draw debug text information
       drawDebugInfo(map);
