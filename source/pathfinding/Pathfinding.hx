@@ -42,6 +42,8 @@ class Pathfinding
 			path.nodes.push(node);
 		}
 		path.nodes.reverse();
+        for (node in path.nodes)
+          node.parent = null;
 		return path;
 	}
 }

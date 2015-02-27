@@ -90,6 +90,10 @@ TODO
 CHANGELOG
 -----------
 
+v 0.2.1 - 27.02.2015
+
+- Fix backtrace functions. Clear old data
+
 v 0.2.0 - 18.02.2015
 
 - Tools for GridMap. Tools help work with real game world and model of map.
